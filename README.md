@@ -113,6 +113,6 @@ npm run dev
 O terminal informará um endereço local (geralmente **http://localhost:5173**). Abra o link no seu navegador para testar a aplicação!
 
 ## ✒️ Autores
-<center>Gustavo Silva - Desenvolvedor Full-Stack: <strong>GustavoSilva-dev</strong></center>
-<center>Jefferson - Desenvolvedor Front-End: <strong>Marcosszxleonardo</strong></center>
+<center>Gustavo Silva - Desenvolvedor Full-Stack: <strong>GustavoSilva-dev</strong></center> <br/>
+<center>Jefferson - Desenvolvedor Front-End: <strong>Marcosszxleonardo</strong></center> <br/>
 <center>Marcos Leonardo - Desenvolvedor Front-End: <strong>Jefferson19620</strong></center>
