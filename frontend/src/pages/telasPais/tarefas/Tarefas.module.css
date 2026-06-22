@@ -1,0 +1,453 @@
+.screen {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0 auto;
+  background: transparent;
+  font-family: 'Segoe UI', sans-serif;
+  padding-bottom: 95px;
+}
+
+.header {
+  width: 100vw;
+  position: fixed;
+  z-index: 1000;
+  background: linear-gradient(to bottom, white, rgb(228, 244, 255));
+  padding: 14px;
+  border-bottom: 2px solid #0077ff;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0077ff;
+  margin: 0;
+}
+
+.greeting {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0077ff;
+}
+
+.alinhamentoSections {
+  padding-top: 60px;
+}
+
+.summary {
+  padding: 14px 12px;
+}
+
+.summaryTitle {
+  font-size: 23px;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #272727;
+}
+
+.summaryTitle:last-of-type {
+  margin-top: 20px;
+}
+
+/* CARDS DOS FILHOS */
+.filhosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px;
+}
+
+.cardFilho {
+  margin-top: 10px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0077ff;
+  border-top: 1px solid #0077ff;
+  border-right: 1px solid #0077ff;
+  border-bottom: 1px solid #0077ff;
+  transition: 0.3s;
+}
+
+.cardFilho:hover {
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(92, 136, 255, 0.451);
+}
+
+.infoPrincipal {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nomeFilho {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #272727;
+  margin: 0;
+}
+
+.statsConclusao {
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #666;
+  margin: 0;
+}
+
+.ofensivaStats {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid #111;
+  justify-content: center;
+  width: 60%;
+}
+
+.saldoCard {
+  color: #fbc02d;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/* CARDS DE ESTATÍSTICAS */
+.cards {
+  display: flex;
+  gap: 10px;
+}
+
+.infoCard {
+  border: 2px solid #4a90ff;
+  flex: 1;
+  background: linear-gradient(to bottom, #ffffff, #e2f4ff);
+  border-radius: 18px;
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.infoCard:hover {
+  transition: 0.3s;
+  transform: scale(1.05);
+  box-shadow: 0 3px 20px rgba(92, 136, 255, 0.451);
+}
+
+.infoNumber {
+  animation: moveTop 2s ease-in-out infinite;
+  transition: 0.3s;
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 800;
+  color: #272727;
+}
+
+.infoText {
+  font-size: 15px;
+  color: #272727;
+  font-weight: 500;
+}
+
+.tasksSection {
+  padding: 0 12px;
+}
+
+.tasksTitle {
+  font-size: 23px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.nivelFilho {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.progressBar {
+  width: 200px;
+  height: 15px;
+  border-radius: 50px;
+  background-color: #808080;
+  overflow: hidden;
+}
+
+.conclusionBar {
+  background: linear-gradient(90deg, #00a83a,#4a90ff);
+  height: 15px;
+  border-radius: 50px;
+  border-right: 2px solid white;
+  transition: width 1s ease-out;
+  animation: carregarBarra 2s ease-in-out, background-change 1s linear infinite;
+  transform-origin: left;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.taskCard {
+  border: 1px solid #1976d2;
+  background: linear-gradient(150deg,
+      #fff,
+      #00ff6a46);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.12);
+  color: #272727;
+  transition: 0.3s;
+}
+
+.taskCard:hover {
+  transition: 0.3s;
+  box-shadow: 0 3px 20px rgba(92, 136, 255, 0.451);
+}
+
+
+.taskLeft {
+  max-width: 65%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.taskIcon {
+  animation: moveRight 2s ease-in-out infinite;
+  font-size: 30px;
+  color: #272727;
+}
+
+.taskName {
+  font-size: 15px;
+  font-weight: 800;
+  color: #272727;
+  margin: 0;
+}
+
+.taskMeta {
+  font-size: 12px;
+  color: #272727;
+  margin: 2px 0 0;
+}
+
+.taskMeta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.taskRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.points {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #272727;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #272727;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn svg {
+  width: 25px;
+  height: 25px;
+  transition: 0.3s;
+}
+
+.deleteBtn:hover {
+  transform: scale(1.15);
+  transition: 0.3s;
+}
+
+.addButton,
+.analysisButton,
+.expiredButton {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+  transition: 0.3s;
+}
+
+.addButton {
+  background: linear-gradient(to right, #00a82d, #008f26);
+  justify-content: center;
+  margin-top: 25px !important;
+}
+
+.addButton:hover,
+.analysisButton:hover,
+.expiredButton:hover {
+  transition: 0.3s;
+  font-size: 21px;
+}
+
+.analysisButton {
+  background: linear-gradient(to right, #009dff, #0074bd);
+}
+
+.expiredButton {
+  background-color: #fff;
+  border: 1.5px solid #c40000;
+  color: #c40000;
+}
+
+.badgeBlue,
+.badgeRed {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+/* Keyframes */
+@keyframes moveRight {
+  0% {
+    transform: translateX(-2px)
+  }
+
+  50% {
+    transform: translateX(2px)
+  }
+
+  100% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes moveTop {
+  0% {
+    transform: translateY(-4px)
+  }
+
+  50% {
+    transform: translateY(0px)
+  }
+
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes carregarBarra {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes background-change {
+  0% {
+    background: linear-gradient(90deg,
+        #00a83a,
+        #4a90ff);
+  }
+
+  50% {
+    background: linear-gradient(90deg,
+        #4a90ff,
+        #00a83a);
+  }
+}
+
+@media (min-width: 750px) {
+  .alinhamentoSections {
+    display: grid;
+    grid-template-columns: 20% 40%;
+    justify-content: center;
+    gap: 75px;
+    width: 100%;
+    padding: 20px;
+    padding-top: 60px;
+  }
+
+  .tasksSection {
+    margin-top: 40px;
+  }
+
+  .cards {
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .infoCard {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+  }
+
+  .infoCard span {
+    transform: scale(1.3);
+  }
+
+  .cardFilho {
+    transform: scale(1.05);
+  }
+
+  .taskCard {
+    transform: scale(1.05);
+  }
+
+  .analysisButton,
+  .expiredButton,
+  .addButton {
+    transform: scaleX(1.05);
+  }
+}

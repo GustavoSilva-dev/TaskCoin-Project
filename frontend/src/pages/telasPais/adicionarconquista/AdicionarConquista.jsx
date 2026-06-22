@@ -1,0 +1,162 @@
+import styles from './AdicionarConquista.module.css';
+import "../../../global.css"
+import api from "../../../services/api";
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import MenuInferior from '../../components/MenuInferior/MenuInferior';
+import LoadingScreen from '../../components/LoadingScreen';
+import Counter from '../../components/Counter';
+import Header from '../../components/Header/Header';
+import { FaStar } from "react-icons/fa6";
+import { GiStarFormation } from "react-icons/gi";
+
+export default function AdicionarConquista() {
+  const navigate = useNavigate();
+  const [usuario, setUsuario] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [aberto, setAberto] = useState(false);
+  const [filhoSelecionado, setFilhoSelecionado] = useState(null);
+  const [recompensaForm, setRecompensaForm] = useState({
+    nome_recompensa: "",
+    valor_recompensa: null,
+    id_filho: null,
+    id_responsavel: null,
+  })
+
+  useEffect(() => {
+    const fetchUsuario = async () => {
+      try {
+        const response = await api.get("/responsaveis/detalhe-responsavel");
+        setUsuario(response.data);
+
+        setRecompensaForm(prev => ({
+          ...prev,
+          id_responsavel: response.data.id
+        }));
+
+        setLoading(false);
+      } catch (error) {
+        console.error("Erro em coletar usuário: ", error);
+        setLoading(true);
+      }
+    };
+
+    fetchUsuario();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    const valorFormatado = name === "valor_recompensa" ? Number(value) : value;
+
+    setRecompensaForm({
+      ...recompensaForm,
+      [name]: valorFormatado
+    });
+  };
+
+  const criarRecompensa = async (recompensa) => {
+    try {
+      const response = await api.post("/recompensas", recompensa)
+      navigate("/conquistaspai")
+    } catch (error) {
+      alert("Erro ao criar conquista")
+      console.error("ERRO AO CRIAR CONQUISTA: " + error)
+    }
+  }
+
+  if (loading) {
+    return <LoadingScreen />
+  }
+
+  return (
+    <div className={styles.screen}>
+      {/* TOPO */}
+      <Header mostrarVoltar />
+
+      <div className={styles.section}>
+
+        {/* TITULO */}
+        <div className={styles.tituloArea}>
+          <div className={styles.tituloTOP}>
+            <h1>
+              Crie uma conquista
+            </h1>
+            <div className={styles.addBtn}>
+              <GiStarFormation />
+            </div>
+          </div>
+          <p className={styles.subtitulo}>
+            Crie conquistas para reconhecer a dedicação e fortalecer os laços familiares.
+          </p>
+        </div>
+
+
+        {/* FORM */}
+        <div className={styles.formArea}>
+
+          <label><FaStar /> Nome da Conquista:</label>
+          <input
+            type="text"
+            name="nome_recompensa"
+            placeholder="Digite o nome da conquista"
+            className={styles.inputField}
+            value={recompensaForm.nome_recompensa}
+            onChange={handleChange}
+          />
+
+          {/* SELECT */}
+          <label><FaStar /> Selecione o filho:</label>
+          <div className={styles.selectArea}>
+            <div
+              className={styles.selectTop}
+              onClick={() => setAberto(!aberto)}
+            >
+              <span>{filhoSelecionado ? filhoSelecionado.nome : "Selecione o filho"}</span>
+              <span className={styles.seta} style={{ transform: aberto ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                v
+              </span>
+            </div>
+
+            {aberto && (
+              <div className={styles.filhosLista}>
+                {usuario?.filhos?.map((filho) => (
+                  <p
+                    key={filho.id}
+                    onClick={() => {
+                      setRecompensaForm({ ...recompensaForm, id_filho: filho.id });
+                      setFilhoSelecionado(filho);
+                      setAberto(false);
+                    }}
+                  >
+                    {filho.nome}
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <label><FaStar /> Preço da Conquista</label>
+          <input
+            type="number"
+            name="valor_recompensa"
+            placeholder="Custo da conquista"
+            className={styles.inputField}
+            value={recompensaForm.valor_recompensa}
+            onChange={handleChange}
+          />
+
+        </div>
+
+        {/* BOTAO */}
+        <button className={styles.criarBtn} onClick={() => criarRecompensa(recompensaForm)}>
+          Criar Conquista
+        </button>
+      </div>
+
+
+
+      <MenuInferior abaAtiva="conquistas" usuario={"pai"} />
+    </div>
+  );
+}

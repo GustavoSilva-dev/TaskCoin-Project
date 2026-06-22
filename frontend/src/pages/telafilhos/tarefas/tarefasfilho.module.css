@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.screen {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: flex-start;
+  min-height: 100vh;
+  height: auto;
+  max-width: 400px;
+  width: 100%;
+  background: transparent;
+  font-family: 'Segoe UI', sans-serif;
+  padding-bottom: 95px;
+}
+
+.containerWrapper {
+  width: 100%;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100vw;
+  position: fixed;
+  z-index: 1000;
+  background: linear-gradient(to bottom, white, rgb(245, 255, 247));
+  padding: 14px 20px;
+  border-bottom: 2px solid #00a83a;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: #00a83a;
+  margin: 0;
+}
+
+.greeting {
+  font-size: 15px;
+  font-weight: 700;
+  color: #00a83a;
+}
+
+.maxLevel {
+  & span {
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.516);
+    background: linear-gradient(to right, #f5b400, #b08100);
+    font-weight: 800 !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.descMax {
+  color: #b08100 !important;
+  border-color: #b08100 !important;
+}
+
+/* CARD PONTOS */
+
+.offensiveCard {
+  overflow: hidden;
+  background: linear-gradient(to right, #80b3ff 0%, white 40%);
+  border-radius: 18px;
+  padding: 20px 18px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #3b82f6;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 82px;
+
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.offensiveCard:hover {
+  transition: 0.3s;
+  box-shadow: 0 0 20px #009d376c;
+}
+
+.recordBadge:hover {
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+.recordBadge span {
+  display: flex;
+  gap: 3px;
+}
+
+.recordBadge {
+  transition: 0.2s;
+}
+
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  animation: cardEntrance 1s ease-in-out;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 40%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rightContent {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.recordBadge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #009dff;
+  transition: transform 0.2s ease;
+}
+
+.recordBadge p {
+  font-size: 1rem;
+  animation: recordColor 1s infinite alternate;
+}
+
+.fireEmoji {
+  font-size: 1.8rem;
+  color: #d7a100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 2px white;
+  animation: firePulse 1.5s ease-in-out infinite alternate;
+}
+
+.number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #d7a100;
+  text-shadow: 0 2px 2px white;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1;
+  animation: firePulse 1.5s ease-in-out infinite alternate;
+}
+
+.pointsCard {
+  margin-top: 70px;
+  transition: 0.3s;
+  margin-bottom: 14px;
+  background: #fff;
+  border: 2px solid #4a90ff;
+  border-radius: 18px;
+  padding: 14px 18px;
+  width: 100%;
+  max-width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  justify-self: center;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pointsLabel {
+  font-size: 18px;
+  font-weight: 900;
+  color: #1cab53;
+}
+
+.pointsInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coin {
+  margin-top: -2px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f5b400;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.pointsNumber {
+  font-size: 24px;
+  font-weight: 900;
+  color: #f5b400;
+}
+
+/* PROGRESSO */
+.levelCard {
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 255px;
+  min-width: 100%;
+  margin: 0 14px;
+  background: linear-gradient(to bottom, #ffffff, #e2f4ff);
+  border: 2px solid #4a90ff;
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.levelCard:hover {
+  transition: 0.3s;
+  box-shadow: 0 0 20px #009d376c;
+}
+
+.trophyIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.trophyIcon svg path {
+  color: #00b03e;
+  animation: colorChange 4s infinite;
+}
+
+.trophyIcon svg {
+  background: none;
+  height: 60px;
+  width: auto;
+  animation: backgroundAnimate 2s ease infinite, movement 2s ease-in-out infinite alternate;
+}
+
+.levelCard h4 {
+  justify-self: center;
+  align-self: center;
+  max-width: 80%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 20px;
+  border: 1px solid #006426;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: #ffff;
+  border-radius: 15px;
+  animation: textSpacing 4s ease-in-out infinite;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+  text-shadow: 0 1px 1px rgb(255, 255, 255);
+  color: #006426;
+}
+
+.levelCard p {
+  text-align: center;
+}
+
+.levelTop {
+  cursor: default;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.levelTop h2 {
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 800;
+  color: #222;
+}
+
+.levelTop span {
+  font-size: 12px;
+  font-weight: 900;
+  color: #555;
+}
+
+.levelTitle {
+  font-size: 15px !important;
+  background: linear-gradient(35deg, rgba(0, 119, 255, 1), rgba(2, 198, 68, 1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 100%;
+}
+
+.progressBar {
+  width: 100%;
+  height: 18px;
+  background: #e1e1e1;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progressFill {
+  background: linear-gradient(90deg, #00a83a, #4a90ff);
+  animation: background-change 1s linear infinite, progressAppears 1s ease-in-out;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 3s ease-out;
+  transition-delay: 2s;
+  transform-origin: left;
+}
+
+.levelCard p {
+  margin-top: 7px;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 700;
+  color: #8f8f8f;
+}
+
+/* TASKS */
+
+.tasksSection {
+  padding: 22px 16px 0;
+  margin-bottom: 60px;
+}
+
+.taskDescription p:first-of-type {
+  margin-bottom: 0;
+}
+
+.tasksTitle {
+  font-size: 28px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 18px;
+}
+
+.taskPoints {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* TASK CARD */
+
+.taskCard {
+  transition: all 0.5s ease, box-shadow 0.3s ease;
+  background-color: #ffff;
+  border: 2px solid #009dff;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.taskCard:hover {
+  transition: 0.3s;
+  box-shadow: 0 0 20px #009d376c;
+}
+
+.expanded {
+  padding-bottom: 18px;
+}
+
+.taskDate {
+  font-size: 13px;
+  font-weight: 800;
+  color: #00a83a;
+}
+
+.today {
+  color: #00a83a;
+}
+
+.taskContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 70%;
+}
+
+.taskEmoji {
+  animation: moveRight 1.5s ease-in-out infinite;
+  font-size: 30px;
+}
+
+.taskName {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111;
+
+  margin-bottom: 4px;
+}
+
+.taskMeta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #777;
+}
+
+.taskRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.taskPoints {
+  font-size: 18px;
+  font-weight: 900;
+  color: #f5b400;
+}
+
+.arrow {
+  font-size: 22px;
+  color: #555;
+}
+
+.completeButton {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  background: #4a90ff;
+  color: white;
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+.completeButton:hover {
+  transition: 0.3s;
+  background: #1353ba;
+  color: white;
+}
+
+.completed {
+  width: 100%;
+  border: 1px solid #00a83a;
+  border-radius: 999px;
+  background: transparent;
+  color: #00a83a;
+  font-weight: 800;
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: inherit;
+}
+
+.analysis {
+  margin-top: 18px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #009dff;
+  border-radius: 999px;
+  background: transparent;
+  color: #4a90ff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.leftSide {
+  margin-top: 0;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  padding: 22px 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.expired {
+  margin-top: 18px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ff0000;
+  border-radius: 999px;
+  background: transparent;
+  color: #ff0000;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.penalized {
+  margin-top: 18px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #7c7c7c;
+  border-radius: 999px;
+  background: transparent;
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.subtasks {
+  margin-top: 16px;
+  margin-left: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  color: #555;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.arrow button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #4a90ff;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.arrow button:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.taskDescription p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+
+.taskDetails {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  border-top: 1px solid transparent;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+}
+
+.taskCard.expanded .taskDetails {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 15px;
+  border-top: 1px solid #e1e1e1;
+}
+
+.rightSide {
+  align-self: start;
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pointsCard:hover {
+  transition: 0.3s;
+  box-shadow: 0 0 20px #009d376c;
+}
+
+/* KEYFRAMES */
+@keyframes background-change {
+  0% {
+    background: linear-gradient(90deg,
+        #00a83a,
+        #4a90ff);
+  }
+
+  50% {
+    background: linear-gradient(90deg,
+        #4a90ff,
+        #00a83a);
+  }
+}
+
+@keyframes progressAppears {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes movement {
+  from {
+    transform: translateY(-10px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes recordColor {
+  from {
+    color: #009dff;
+  }
+
+  to {
+    color: #10b981;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: #009d37;
+  }
+
+  50% {
+    color: #009dff;
+  }
+
+  100% {
+    color: #009d37;
+  }
+}
+
+
+@keyframes textSpacing {
+  0% {
+    letter-spacing: 0.5px;
+  }
+
+  50% {
+    letter-spacing: 0;
+  }
+
+  100% {
+    letter-spacing: 0.5px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes firePulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgba(234, 179, 8, 0.2));
+  }
+
+  100% {
+    transform: scale(1.12);
+    filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.6));
+  }
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-2px);
+  }
+
+  50% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes backgroundAnimate {
+  0% {
+    filter: drop-shadow(0 1px 8px #ffffff) drop-shadow(0 0 20px #0067a77e) drop-shadow(0 0 50px rgba(0, 255, 98, 0.380));
+  }
+
+  50% {
+    filter: drop-shadow(0 1px 8px #ffffff) drop-shadow(0 0 20px #00b03e7e) drop-shadow(0 0 50px rgba(0, 195, 255, 0.380));
+  }
+
+  100% {
+    filter: drop-shadow(0 1px 8px #ffffff) drop-shadow(0 0 20px #0067a77e) drop-shadow(0 0 50px rgba(0, 255, 98, 0.380));
+  }
+}
+
+/* Responsividade para Desktop */
+@media (min-width: 1100px) {
+  .containerWrapper {
+    align-items: start;
+    padding-bottom: 50px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 85%;
+    justify-content: center;
+  }
+
+  .leftSide {
+    padding: 0;
+    min-width: 420px;
+    max-width: 420px;
+    transform: scale(1.2);
+    position: fixed;
+    top: 10%;
+    left: 16%;
+  }
+
+  .rightSide {
+    position: relative;
+    margin-left: 60%;
+    padding-top: 80px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .containerWrapper {
+    align-items: start;
+    padding-bottom: 50px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 65%;
+    justify-content: center;
+  }
+
+  .rightSide {
+    margin-left: 50%;
+  }
+}

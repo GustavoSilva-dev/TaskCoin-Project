@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+/* SCREEN PADRÃO */
+.screen {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  min-height: 100vh;
+  background: transparent;
+  padding-bottom: 30px;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  background: linear-gradient(to bottom, white, rgb(228, 244, 255));
+  padding: 14px;
+  border-bottom: 2px solid #0077ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: #107cdc;
+}
+
+.section {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+/* PERFIL */
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 90px;
+}
+
+.profileAvatar {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #0077ff, #02c644);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+  color: white;
+}
+
+.profileAvatar p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: avatarAnimation 2s ease-in-out infinite;
+}
+
+.profileAvatar p img {
+  height: 42px;
+}
+
+.profileName {
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0077ff;
+}
+
+.profileType {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* FILHOS */
+.childrenSection {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.childrenHeader {
+  position: relative;
+  z-index: 99;
+  background: linear-gradient(90deg, #0077ff, #02c644);
+  border-radius: 15px 15px 0 0;
+  color: white;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.childrenList {
+  border-radius: 0 0 15px 15px;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.249);
+}
+
+.childrenList p {
+  text-align: center;
+  padding: 14px 12px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #019c35;
+}
+
+.childrenList p span {
+  color: #979797;
+}
+
+.childrenList p:last-child {
+  border-bottom: none;
+}
+
+/* LOGOUT FIXO */
+.logoutSection {
+  animation: none !important;
+  position: fixed;
+  bottom: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  padding: 0 12px;
+  z-index: 998;
+}
+
+.logoutButton {
+  width: 100%;
+  border: none;
+  background: #c40000;
+  color: white;
+  padding: 16px 14px;
+  font-size: 18px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.logoutButton:hover {
+  transition: 0.3s;
+  background: rgb(107, 0, 0);
+}
+
+/* NAVBAR PADRÃO */
+
+.navBtn {
+  border: none;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
+
+  cursor: pointer;
+}
+
+.navIcon {
+  font-size: 24px;
+}
+
+.navText {
+  font-size: 13px;
+  font-weight: 400;
+  color: black;
+}
+
+.active .navText {
+  color: #00a651;
+  font-weight: 600;
+}
+
+@keyframes avatarAnimation {
+  0% {
+    transform: scale(1)
+  }
+
+  50% {
+    transform: scale(1.1)
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 800px) {
+  .profileAvatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profileAvatar p img {
+    height: 50px;
+  }
+
+  .profileName {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .profileType {
+    font-size: 15px;
+    text-align: center;
+  }
+}

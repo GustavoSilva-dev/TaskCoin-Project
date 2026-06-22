@@ -1,0 +1,292 @@
+.page {
+  min-height: 100vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+  animation: smoothMove 4s ease-in-out infinite alternate;
+  width: 150px;
+  object-fit: contain;
+}
+
+.tagline {
+  margin-top: 5px;
+  color: #0051ff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.toggle {
+  border: 1px solid #0051ff;
+  width: 100%;
+  display: flex;
+  background: #eeeeee;
+  border-radius: 18px;
+  padding: 6px;
+  margin-top: 26px;
+}
+
+.toggleBtn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 14px;
+  padding: 12px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #999;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.active {
+  background: white;
+  color: #0077ff;
+}
+
+.form {
+  width: 100%;
+  margin-top: 24px;
+  animation:none;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input {
+  width: 100%;
+  height: 60px;
+  border-radius: 16px;
+  border: 1px solid #d0d0d0;
+  background: #fafafa;
+  padding: 0 18px;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #0077ff;
+}
+
+.btnEntrar {
+  animation: fadeIn 0.5s ease;
+  width: 100%;
+  height: 60px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    #0077ff,
+    #00c853
+  );
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnEntrar:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
+.accountRow {
+  margin-top: 24px;
+}
+
+.accountLink {
+  border: none;
+  background: none;
+  color: #0077ff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnCadastrar {
+  width: 100%;
+  height: 56px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 16px;
+  background: #0077ff;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-decoration: none;   
+  box-sizing: border-box;  
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btnCadastrar:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
+.title {
+  font-style: italic;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 0;
+  letter-spacing: 1px;
+  color: #272727;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 28px 18px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .btnEntrar {
+    font-size: 20px;
+  }
+
+  .btnCadastrar {
+    font-size: 20px;
+  }
+}
+
+/* Responsividade para PCs */
+@media (min-width: 1050px) {
+  .tagline {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .card {
+    gap: 150px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    max-width: 90vw;
+    padding: 40px 32px;
+  }
+
+  .contentContainer {
+    max-width: 500px;
+  }
+
+  .logoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .logo {
+    width: 350px
+  }
+
+  .title {
+    font-size: 64px;
+  }
+
+  .btnEntrar {
+    font-size: 22px;
+  }
+
+  .btnCadastrar {
+    font-size: 22px;
+  }
+}
+
+@keyframes auroraBoreal {
+  0% {
+    background-position: 0% 0%;
+    background-size: 200% 200%;
+  }
+  50% {
+    background-position: 100% 50%;
+    background-size: 220% 180%; 
+  }
+  100% {
+    background-position: 0% 100%;
+    background-size: 180% 220%;
+  }
+}
+
+@keyframes smoothMove {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    letter-spacing: 0px;
+  }
+  50% {
+    letter-spacing: 1px;
+  }
+  100% {
+    letter-spacing: 0px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

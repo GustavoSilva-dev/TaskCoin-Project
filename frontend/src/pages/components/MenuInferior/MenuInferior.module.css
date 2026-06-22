@@ -1,0 +1,144 @@
+.bottomNav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid #0077ff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom);
+
+}
+
+.bottomNavPai {
+    background: linear-gradient(to bottom, #ffff, #d1e7ff);
+    border-top: 2px solid #0077ff;
+}
+
+.bottomNavFilho {
+    background: linear-gradient(to bottom, #ffff, #f0ffef);
+    border-top: 2px solid #00a83a;
+}
+
+.navBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    height: 100%;
+    gap: 4px;
+    transition: all 0.2s ease;
+}
+
+.navIcon {
+    display: inline-block;
+    font-size: 35px;
+    color: #757575;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navText {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #757575;
+    transition: color 0.2s ease;
+}
+
+.bottomNav[data-page="tarefas"] .navBtn:nth-child(1) .navIcon,
+.bottomNav[data-page="conquistas"] .navBtn:nth-child(2) .navIcon,
+.bottomNav[data-page="perfil"] .navBtn:nth-child(3) .navIcon {
+    /* Cria o quadrado de fundo */
+    background: linear-gradient(35deg, rgba(0, 119, 255, 1) 0%, rgba(2, 198, 68, 1) 100%);
+    border-radius: 10px;
+    /* Deixa os cantos do quadrado arredondados e modernos */
+    color: #fff;
+
+    /* Define o tamanho do quadrado e centraliza o ícone dentro dele */
+    width: 46px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Efeito de leve crescimento */
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+.bottomNav[data-page="tarefas"] .navBtn:nth-child(1) .navText,
+.bottomNav[data-page="conquistas"] .navBtn:nth-child(2) .navText,
+.bottomNav[data-page="perfil"] .navBtn:nth-child(3) .navText {
+    color: transparent;
+    background: linear-gradient(35deg, rgba(0, 119, 255, 1) 0%, rgba(2, 198, 68, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.navBtn:hover .navText {
+    transform: translateY(-2px);
+}
+
+.navBtn:hover .navIcon {
+    transform: translateY(-2px);
+    color: #0077ff;
+}
+
+.navBtn:hover .navText {
+    transform: translateY(-2px);
+    color: #0077ff;
+}
+
+.bottomNav[data-page="tarefas"] .navBtn:nth-child(1):hover .navIcon,
+.bottomNav[data-page="conquistas"] .navBtn:nth-child(2):hover .navIcon,
+.bottomNav[data-page="perfil"] .navBtn:nth-child(3):hover .navIcon {
+    transform: scale(1.05) translateY(-2px);
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: translateX(-2px);
+    }
+}
+
+@keyframes moveTop {
+    0% {
+        transform: translateY(-4px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-4px);
+    }
+}
+
+@media (min-width: 600px) {
+    .bottomNav {
+        width: 600px;
+        max-width: 100vw;
+    }
+}

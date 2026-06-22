@@ -1,0 +1,324 @@
+.screen {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0 auto;
+  background: transparent;
+  font-family: 'Segoe UI', sans-serif;
+  padding-bottom: 100px;
+}
+
+/* --- ESTRUTURA GERAL --- */
+.header {
+  width: 100vw;
+  position: fixed;
+  z-index: 1000;
+  background: linear-gradient(to bottom, white, rgb(228, 244, 255));
+  padding: 14px;
+  border-bottom: 2px solid #0077ff;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0077ff;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greeting {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0077ff;
+}
+
+/* --- SEÇÃO DE CONTEÚDO --- */
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  width: 90%;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.title {
+  text-shadow: 2px 2px 50px rgba(255, 225, 0, 0.414), 2px 2px 1px rgba(255, 225, 0, 0.414);
+  font-weight: 800;
+  color: #333;
+  margin: 15px 0 10px;
+}
+
+.conquistasTitle {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+/* --- LISTA DE CARDS --- */
+.achievementsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  align-self: flex-start;
+  height: min-content;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.listTitle {
+  font-size: 23px;
+  font-weight: 800;
+  margin-top: 0px;
+  text-align: left;
+  align-self: flex-start;
+  padding-bottom: 10px;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  width: 100%;
+  background: linear-gradient(-120deg, rgb(255, 250, 221), white);
+  border-radius: 20px;
+  border: 1px solid rgb(255, 217, 0);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 35px;
+}
+
+.left p {
+  display: flex;
+  align-items: center;
+  color: #ffb800;
+  animation: moveTop 2s ease-in-out infinite;
+}
+
+.info h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.points {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 800;
+  color: #ffb800;
+  font-size: 15px;
+}
+
+.coin {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.subtitulo {
+  color: #000000;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* --- LADO DIREITO DO CARD --- */
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+  gap: 12px;
+}
+
+.deleteBtn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.deleteBtn:hover {
+  transform: scale(1.2);
+}
+
+.resgates {
+  font-size: 10px;
+  font-weight: 800;
+  color: #b0b0b0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.resgatado {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0077ff;
+  animation: color 2s linear infinite;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* --- BOTÃO DE AÇÃO --- */
+.addButton {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(to right, #00a82d, #008f26);
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.addButton:hover {
+  font-size: 21px;
+  transition: 0.3s;
+}
+
+@keyframes moveTop {
+  0% {
+    transform: translateY(-2px);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes color {
+  0% {
+    color: #0077ff;
+  }
+
+  50% {
+    color: #00a82d;
+  }
+
+  100% {
+    color: #0077ff;
+  }
+}
+
+@media (min-width: 900px) {
+  .sectionWrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* ◄── Garantia de ancoragem no topo */
+    width: 100%;
+  }
+
+  .menuInferior {
+    display: none;
+  }
+
+  .section {
+    margin: 0;
+    min-height: 100vh;
+    height: auto;
+    gap: 80px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+
+    padding-top: 90px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+  }
+
+  .achievementsContainer {
+    margin: 0;
+    margin-top: 0; /* ◄── Zere isso! O padding-top do .section já cuida do espaço do header */
+    width: 30%;    /* ◄── Um pouco maior para os cards respirarem melhor em telas desktop */
+    padding: 0;
+  }
+
+  .card h2 {
+    width: 70%;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 45px;
+  }
+
+  .subtitulo {
+    margin-top: -15px;
+    text-align: center;
+  }
+
+  .conquistasTitle {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin-top: 0;
+    align-self: center;
+  }
+}
