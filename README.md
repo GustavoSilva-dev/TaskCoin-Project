@@ -25,6 +25,8 @@ O **TaskCoin** é uma plataforma Full-Stack desenvolvida como um aplicativo híb
 
 Ao cumprir os deveres, os filhos acumulam moedas virtuais (*TaskCoins*) que podem ser trocadas por conquistas e recompensas reais combinadas dentro do ecossistema da família. Mais do que um simples gerenciador de tarefas, a plataforma atua como uma ferramenta de fortalecimento de laços, autonomia e consistência de hábitos saudáveis.
 
+[📃 Documentação API Backend: Swagger Open API](https://taskcoin-api-backend.onrender.com/swagger-ui/index.html#/)
+
 ---
 
 ## 📸 Demonstração Visual
@@ -59,9 +61,10 @@ TaskCoin-Project/
 
 ### Back-end
 <ul>
-<li>Java 17 / Spring Boot</li>
+<li>Java 21 / Spring Boot</li>
 <li>Spring Data</li>
 <li>Maven</li>
+<li>Swagger</li>
 <li>PostgreSQL / Supabase (Banco de Dados Relacional)</li>
 </ul>
 
